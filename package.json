@@ -1,6 +1,6 @@
 {
   "name": "language-rego",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "description": "Atom language support for Rego",
   "keywords": [],
   "repository": "https://github.com/ferhaty/language-rego",

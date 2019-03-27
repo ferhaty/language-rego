@@ -1,0 +1,99 @@
+fileTypes: ["rego"]
+name: "Rego"
+patterns: [
+  {
+    begin: "('|\")"
+    beginCaptures:
+      "0":
+        name: "punctuation.definition.string.begin.rego"
+    end: "('|\")"
+    endCaptures:
+      "0":
+        name: "punctuation.definition.string.end.rego"
+    name: "string.quoted.single.rego"
+    patterns: [
+      {
+        match: "\\\\."
+        name: "constant.character.escape.rego"
+      }
+      {
+        match: "''"
+        name: "constant.character.escape.quote.rego"
+      }
+    ]
+  }
+  {
+    begin: '(package|import)\\b\\s*'
+    beginCaptures:
+      "1":
+        name: "keyword.other.package.rego"
+    captures:
+      "1":
+        name: "keyword.other.package.rego"
+      "2":
+        name: "storage.modifier.package.rego"
+      "3":
+        name: "punctuation.terminator.rego"
+    contentName: "storage.modifier.package.rego"
+    end: "\\s*"
+    endCaptures:
+      "1":
+        name: "punctuation.terminator.rego"
+    name: "meta.package.rego"
+    patterns: [
+      {
+        match: "\\."
+        name: "punctuation.separator.rego"
+      }
+      {
+        match: "\\s"
+        name: "invalid.illegal.character_not_allowed_here.rego"
+      }
+    ]
+  }
+  {
+    begin: "/\\*"
+    captures:
+      "0":
+        name: "punctuation.definition.comment.rego"
+    end: "\\*/"
+    name: "comment.block.rego"
+  }
+  {
+    begin: "(^[ \\t]+)?(?=#)"
+    beginCaptures:
+      "1":
+        name: "punctuation.whitespace.comment.leading.rego"
+    end: "(?!\\G)"
+    patterns: [
+      {
+        begin: "#"
+        beginCaptures:
+          "0":
+            name: "punctuation.definition.comment.rego"
+        end: "\\n"
+        name: "comment.line.percentage.rego"
+      }
+    ]
+  }
+  {
+    match: ":-"
+    name: "keyword.operator.definition.rego"
+  }
+  {
+    match: "\\b[A-Z][a-zA-Z0-9_]*\\b"
+    name: "variable.other.rego"
+  }
+  {
+    comment: '''
+
+      			I changed this from entity to storage.type, but have no idea what it is -- Allan
+      			And I changed this to constant.other.symbol after glancing over the docs,
+      			    might still be wrong.  -- Infininight
+
+    '''
+    match: "\\b[a-z][a-zA-Z0-9_]*\\b"
+    name: "constant.other.symbol.rego"
+  }
+]
+scopeName: "source.rego"

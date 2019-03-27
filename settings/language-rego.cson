@@ -1,0 +1,5 @@
+".source.rego":
+  editor:
+    commentStart: "# "
+    increaseIndentPattern: ":-\\s*$"
+    foldEndPattern: "#\\s*end(\\s*region)?"

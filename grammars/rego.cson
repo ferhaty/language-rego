@@ -81,7 +81,7 @@ patterns: [
     name: "keyword.operator.definition.rego"
   }
   {
-    match: "(as|default|else|false|not|null|true|with)"
+    match: "(\\bas\\b|\\bdefault\\b|\\belse\\b|\\bfalse\\b|\\bnot\\b|\\bnull\\b|\\btrue\\b|\\bwith\\b)"
     name: "keyword.operator.logical.rego"
   }
   {

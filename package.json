@@ -3,7 +3,7 @@
   "version": "2.1.6",
   "description": "Atom language support for Rego",
   "keywords": [],
-  "repository": "https://github.com/ferhaty/language-rego",
+  "repository": "https://ferhaty@github.com/ferhaty/language-rego",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
